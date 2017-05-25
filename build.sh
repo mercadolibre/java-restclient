@@ -43,9 +43,9 @@ function modifyVersion() {
     line_nbr=$1
     version=$2
 
-    if [ "$line_nbr" != "" ]; then
-        sed -i '' "${line_nbr}s/<version>.*<\/version>/<version>$version<\/version>/" README.md
-    fi
+    #if [ "$line_nbr" != "" ]; then
+        #sed -i '' "${line_nbr}s/<version>.*<\/version>/<version>$version<\/version>/" README.md
+    #fi
 }
 
 function updateGit() {
