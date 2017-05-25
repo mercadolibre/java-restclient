@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.mercadolibre.restclient</groupId>
     <artifactId>restclient</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.6</version>
   </parent>
 
   <artifactId>restclient-httpc</artifactId>
