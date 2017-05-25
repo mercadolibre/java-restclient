@@ -86,6 +86,29 @@
         </configuration>
       </plugin>
 
+      <plugin>
+          <groupId>com.github.github</groupId>
+          <artifactId>site-maven-plugin</artifactId>
+          <version>0.12</version>
+          <configuration>
+            <message>Maven artifacts for restclient-httpc ${project.version}</message>
+            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+            <branch>refs/heads/mvn-repo</branch>
+            <includes><include>**/*</include></includes>
+            <repositoryName>java-restclient</repositoryName>
+            <repositoryOwner>mercadolibre</repositoryOwner>
+            <noJekyll>true</noJekyll>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>site</goal>
+              </goals>
+              <phase>deploy</phase>
+            </execution>
+          </executions>
+      </plugin>
+
     </plugins>
   </build>
 
