@@ -58,7 +58,7 @@ and the dependency itself
 <dependency>
     <groupId>com.mercadolibre.restclient</groupId>
     <artifactId>restclient-default</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 ```
 
@@ -401,7 +401,7 @@ For a more detailed explanation on mock matching criteria, please take a look at
 <dependency>
     <groupId>com.mercadolibre.restclient</groupId>
     <artifactId>restclient-core</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <classifier>tests</classifier>
     <scope>test</scope>
 </dependency>
