@@ -157,10 +157,9 @@
           <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
           <branch>refs/heads/mvn-repo</branch>
           <includes><include>**/*</include></includes>
-          <repositoryName>restclient-core</repositoryName>
+          <repositoryName>java-restclient</repositoryName>
           <repositoryOwner>mercadolibre</repositoryOwner>
           <noJekyll>true</noJekyll>
-          <merge>true</merge>
         </configuration>
         <executions>
           <execution>
