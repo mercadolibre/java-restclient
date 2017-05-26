@@ -81,7 +81,7 @@ elif ! isPushed; then
     exit 1
 fi
 
-#updateVersion $version
+updateVersion $version
 updateReadmeVersion $version
 
 if [ $do_deploy -eq 1 ]; then
