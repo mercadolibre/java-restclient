@@ -1,0 +1,1 @@
+com.mercadolibre.restclient.mock.DummyRestClientBuilder

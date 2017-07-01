@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.mercadolibre.restclient</groupId>
+        <artifactId>restclient</artifactId>
+        <version>0.0.8</version>
+    </parent>
+
+    <artifactId>restclient-default</artifactId>
+    <packaging>jar</packaging>
+
+    <name>restclient-default</name>
+    <url>https://github.com/mercadolibre/java-restclient</url>
+
+    <properties>
+        <github.global.server>github</github.global.server>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+      <repository>
+          <id>internal.repo</id>
+          <name>Temporary Staging Repository</name>
+          <url>file://${project.build.directory}/mvn-repo</url>
+      </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                  <message>Maven artifacts for restclient-default ${project.version}</message>
+                  <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                  <branch>refs/heads/mvn-repo</branch>
+                  <includes><include>**/*</include></includes>
+                  <repositoryName>java-restclient</repositoryName>
+                  <repositoryOwner>mercadolibre</repositoryOwner>
+                  <noJekyll>true</noJekyll>
+                  <merge>true</merge>
+                </configuration>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>site</goal>
+                    </goals>
+                    <phase>deploy</phase>
+                  </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.mercadolibre.restclient</groupId>
+            <artifactId>restclient-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mercadolibre.restclient</groupId>
+            <artifactId>restclient-httpc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mercadolibre.restclient</groupId>
+            <artifactId>restclient-default-parsers</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mercadolibre.restclient</groupId>
+            <artifactId>restclient-cache</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+
+</project>
