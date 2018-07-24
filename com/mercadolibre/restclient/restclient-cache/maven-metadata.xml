@@ -3,10 +3,10 @@
   <groupId>com.mercadolibre.restclient</groupId>
   <artifactId>restclient-cache</artifactId>
   <versioning>
-    <release>0.0.10</release>
+    <release>0.0.11</release>
     <versions>
-      <version>0.0.10</version>
+      <version>0.0.11</version>
     </versions>
-    <lastUpdated>20170701021630</lastUpdated>
+    <lastUpdated>20180724210244</lastUpdated>
   </versioning>
 </metadata>
