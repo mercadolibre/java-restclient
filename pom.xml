@@ -3,7 +3,7 @@
 
 	<groupId>com.mercadolibre.restclient</groupId>
 	<artifactId>restclient</artifactId>
-	<version>0.0.10</version>
+	<version>0.0.11</version>
 	<packaging>pom</packaging>
 
 	<name>restclient</name>
