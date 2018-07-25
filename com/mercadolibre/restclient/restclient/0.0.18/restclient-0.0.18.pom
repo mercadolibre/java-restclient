@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.mercadolibre.restclient</groupId>
+	<artifactId>restclient</artifactId>
+	<version>0.0.18</version>
+	<packaging>pom</packaging>
+
+	<name>restclient</name>
+	<url>https://github.com/mercadolibre/java-restclient</url>
+
+	<properties>
+		<github.global.server>github</github.global.server>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>
+		<module>restclient-core</module>
+		<module>restclient-httpc</module>
+		<module>restclient-default-parsers</module>
+		<module>restclient-cache</module>
+		<module>restclient-default</module>
+	</modules>
+
+  	<distributionManagement>
+    	<repository>
+        	<id>internal.repo</id>
+        	<name>Temporary Staging Repository</name>
+        	<url>file://${project.build.directory}/mvn-repo</url>
+    	</repository>
+ 	</distributionManagement>
+
+	<scm>
+		<url>https://github.com/mercadolibre/java-restclient</url>
+		<connection>scm:git:git@github.com:mercadolibre/java-restclient.git</connection>
+		<developerConnection>scm:git:git@github.com:mercadolibre/java-restclient.git</developerConnection>
+  	</scm>
+
+	<build>
+		<plugins>
+
+			<plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                  <message>Maven artifacts for restclient ${project.version}</message>
+                  <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                  <branch>refs/heads/mvn-repo</branch>
+                  <includes><include>**/*</include></includes>
+                  <repositoryName>java-restclient</repositoryName>
+                  <repositoryOwner>mercadolibre</repositoryOwner>
+                  <noJekyll>true</noJekyll>
+                  <merge>true</merge>
+                </configuration>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>site</goal>
+                    </goals>
+                    <phase>deploy</phase>
+                  </execution>
+                </executions>
+            </plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<optimize>true</optimize>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.5</version>
+				<inherited>false</inherited>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-utils</artifactId>
+						<version>3.0.24</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.9.5</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<tag>${project.name}-${project.version}</tag>
+					<connectionType>connection</connectionType>
+				</configuration>
+				<executions>
+					<execution>
+						<id>tag</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>tag</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<generateBackupPoms>false</generateBackupPoms>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
