@@ -109,6 +109,7 @@
 				<configuration>
 					<tag>${project.name}-${project.version}</tag>
 					<connectionType>connection</connectionType>
+					<remoteTagging>false</remoteTagging>
 				</configuration>
 				<executions>
 					<execution>
