@@ -9,6 +9,11 @@
 	<name>restclient</name>
 	<url>https://github.com/mercadolibre/java-restclient</url>
 
+	<properties>
+		<github.global.server>github</github.global.server>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<modules>
 		<module>restclient-core</module>
 		<module>restclient-httpc</module>
@@ -33,6 +38,30 @@
 
 	<build>
 		<plugins>
+
+			<plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.12</version>
+                <configuration>
+                  <message>Maven artifacts for restclient ${project.version}</message>
+                  <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                  <branch>refs/heads/mvn-repo</branch>
+                  <includes><include>**/*</include></includes>
+                  <repositoryName>java-restclient</repositoryName>
+                  <repositoryOwner>mercadolibre</repositoryOwner>
+                  <noJekyll>true</noJekyll>
+                  <merge>true</merge>
+                </configuration>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>site</goal>
+                    </goals>
+                    <phase>deploy</phase>
+                  </execution>
+                </executions>
+            </plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -44,7 +44,7 @@ function modifyVersion() {
     version=$2
 
     if [ "$line_nbr" != "" ]; then
-        sed -i "${line_nbr}s/<version>.*<\/version>/<version>$version<\/version>/" README.md
+        sed -i "" "${line_nbr}s/<version>.*<\/version>/<version>$version<\/version>/" README.md
     fi
 }
 
