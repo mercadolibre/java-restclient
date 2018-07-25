@@ -20,11 +20,11 @@ function isPushed() {
 }
 
 function updateVersion() {
-   mvn -B versions:set -DnewVersion=$1
+   mvn -e -X -B versions:set -DnewVersion=$1
 }
 
 function deploy() {
-    mvn deploy
+    mvn -e -X deploy
 }
 
 function updateReadmeVersion() {
