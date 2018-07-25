@@ -56,7 +56,7 @@ and the dependency itself
 <dependency>
     <groupId>com.mercadolibre.restclient</groupId>
     <artifactId>restclient-default</artifactId>
-    <version>0.0.10</version>
+    <version>0.0.14</version>
 </dependency>
 ```
 
@@ -349,7 +349,7 @@ You can forget about mock and cache cleanup after each test, if you make your te
 <dependency>
     <groupId>com.mercadolibre.restclient</groupId>
     <artifactId>restclient-core</artifactId>
-    <version>0.0.10</version>
+    <version>0.0.14</version>
     <classifier>tests</classifier>
     <scope>test</scope>
 </dependency>
