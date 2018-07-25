@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jul 24 21:12:16 ART 2018
+restclient-default-parsers-0.0.10.jar>=
+restclient-default-parsers-0.0.10.pom>=

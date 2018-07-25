@@ -1,0 +1,7 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Tue Jul 24 21:12:12 ART 2018
+restclient-core-0.0.10.pom>=
+restclient-core-0.0.10-sources.jar>=
+restclient-core-0.0.10-tests.jar>=
+restclient-core-0.0.10-javadoc.jar>=
+restclient-core-0.0.10.jar>=
