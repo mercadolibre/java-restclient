@@ -1,0 +1,30 @@
+repos:
+  # Websec hook is MANDATORY, DO NOT comment it.
+  - repo: https://github.com/mercadolibre/fury_websec-git-hooks
+    rev: v1.0.0
+    hooks:
+      - id: pre_commit_hook
+        stages: [commit]
+      - id: post_commit_hook
+        stages: [post-commit]
+
+  # Next hooks are Code Quality hooks. 
+  # If you want them to run on each commit, uncomment them
+  # These are OPTIONAL.
+  
+  # - repo: https://github.com/macisamuele/language-formatters-pre-commit-hooks
+  #   rev: v2.3.0
+  #   hooks:
+  #   - id: pretty-format-java
+  #     args: [--autofix]
+  # - repo: https://github.com/mercadolibre/fury_code-quality-pre-commit-java
+  #   rev: 1.0.1
+  #   hooks:
+  #   - id: checkstyle
+  #     args:
+  #       - -c
+  #       - .code_quality/checkstyle_rules.xml
+  #   - id: pmd
+  #     args:
+  #       - -R
+  #       - .code_quality/pmd_rules.xml
